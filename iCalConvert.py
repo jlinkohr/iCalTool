@@ -16,8 +16,9 @@ for component in calendar.walk():
     if component.name == "VEVENT":
         # add alarms
         alarm = icalendar.Alarm()
-        trigger = -timedelta(hours=5)
+        trigger = -timedelta(hours=12)
         alarm.add('TRIGGER', trigger)
+        alarm.add('ACTION', 'DISPLAY')
         component.add_component(alarm)
       
 #Open a new .ics file for writing
